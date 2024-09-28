@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: webhook-redhat-taro-72-el 
+spec:
+  tls:
+    termination: edge
+  to:
+    kind: Service
+    name: el-redhat-taro-72-listener
+    weight: 100
+  port:
+    targetPort: http-listener
+  wildcardPolicy: None
